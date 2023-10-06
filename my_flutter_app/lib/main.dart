@@ -51,8 +51,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// class Firework {
-//   @override
-//   Widget build(BuildContext context) {}
-// }
