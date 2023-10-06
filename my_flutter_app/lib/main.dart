@@ -31,26 +31,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Happy Birthday ',
-                style: TextStyle(
-                    fontFamily: 'Caveat',
-                    fontSize: 35,
-                    fontWeight: FontWeight.w700)),
+                style: GoogleFonts.caveat(
+                    fontWeight: FontWeight.w600, fontSize: 35)),
             Text('To',
-                style: TextStyle(
-                    fontFamily: 'Caveat',
-                    fontSize: 35,
-                    fontWeight: FontWeight.w700)),
+                style: GoogleFonts.caveat(
+                    fontWeight: FontWeight.w600, fontSize: 35)),
             Text('Ioanna Juile Seo',
-                style: TextStyle(
-                    fontFamily: 'Caveat',
-                    fontSize: 35,
-                    fontWeight: FontWeight.w700))
+                style: GoogleFonts.caveat(
+                    fontWeight: FontWeight.w600, fontSize: 35))
           ],
         ),
       ),
