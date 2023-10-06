@@ -1,8 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:confetti/confetti.dart';
+import 'package:my_flutter_app/category.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,7 +52,15 @@ class _Main extends State<Main> {
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.topCenter, children: [
       Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
+            child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CategoryScreen()));
+          },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -67,7 +75,7 @@ class _Main extends State<Main> {
                       fontWeight: FontWeight.w600, fontSize: 35))
             ],
           ),
-        ),
+        )),
       ),
       ConfettiWidget(
         confettiController: controller,
