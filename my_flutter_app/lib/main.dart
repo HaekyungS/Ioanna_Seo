@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:confetti/confetti.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,40 +17,66 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'HBD Ioanna',
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: ''),
+      home: Main(title: ''),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Main extends StatefulWidget {
+  const Main({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Main> createState() => _Main();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Main extends State<Main> {
+  final controller = ConfettiController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller.play();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Happy Birthday ',
-                style: GoogleFonts.caveat(
-                    fontWeight: FontWeight.w600, fontSize: 35)),
-            Text('To',
-                style: GoogleFonts.caveat(
-                    fontWeight: FontWeight.w600, fontSize: 35)),
-            Text('Ioanna Juile Seo',
-                style: GoogleFonts.caveat(
-                    fontWeight: FontWeight.w600, fontSize: 35))
-          ],
+    return Stack(alignment: Alignment.topCenter, children: [
+      Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Happy Birthday ',
+                  style: GoogleFonts.caveat(
+                      fontWeight: FontWeight.w600, fontSize: 35)),
+              Text('To',
+                  style: GoogleFonts.caveat(
+                      fontWeight: FontWeight.w600, fontSize: 35)),
+              Text('Ioanna Juile Seo',
+                  style: GoogleFonts.caveat(
+                      fontWeight: FontWeight.w600, fontSize: 35))
+            ],
+          ),
         ),
       ),
-    );
+      ConfettiWidget(
+        confettiController: controller,
+        shouldLoop: true,
+        blastDirectionality: BlastDirectionality.explosive,
+        gravity: 0.5,
+        blastDirection: pi / 2,
+        emissionFrequency: 0.2,
+      )
+    ]);
   }
 }
