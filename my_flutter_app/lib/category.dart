@@ -8,6 +8,7 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
         body: Center(
             child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(onPressed: () {}, child: const Text('2017')),
         ElevatedButton(onPressed: () {}, child: const Text('2018')),
