@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/photoCard.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -10,7 +11,14 @@ class CategoryScreen extends StatelessWidget {
             child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(onPressed: () {}, child: const Text('2017')),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PhotoCardScreen()));
+            },
+            child: const Text('2017')),
         ElevatedButton(onPressed: () {}, child: const Text('2018')),
         ElevatedButton(onPressed: () {}, child: const Text('2019')),
         ElevatedButton(onPressed: () {}, child: const Text('2020')),
