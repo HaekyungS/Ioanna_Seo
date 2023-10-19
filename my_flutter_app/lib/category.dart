@@ -19,7 +19,13 @@ class CategoryScreen extends StatelessWidget {
                       builder: (context) => const PhotoCardScreen()));
             },
             child: const Text('2017')),
-        ElevatedButton(onPressed: () {}, child: const Text('2018')),
+        ElevatedButton(
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll<Color>(Colors.purple),
+          ),
+          onPressed: () {},
+          child: const Text('2018'),
+        ),
         ElevatedButton(onPressed: () {}, child: const Text('2019')),
         ElevatedButton(onPressed: () {}, child: const Text('2020')),
         ElevatedButton(onPressed: () {}, child: const Text('2021')),
